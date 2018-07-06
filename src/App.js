@@ -1,16 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import configureStore from './stores/configureStore';
 import initialState from './initialState';
 
 // Components
 import { MusicList } from './music/components/musicList';
+import { MusicItem } from './music/components/musicItem';
 
 const store = configureStore(initialState);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <MusicList />
-  </Provider>
-);
+export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <HashRouter>
+          <Switch>
+            <Route exact path='/' component={MusicList} />
+            <Route path='/songs/:id' component={MusicItem} />
+          </Switch>
+        </HashRouter>
+      </Provider>
+    );
+  }
+}

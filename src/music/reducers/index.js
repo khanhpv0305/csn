@@ -3,6 +3,6 @@ import musicListReducers from './musicListReducer';
 import musicItemReducers from './musicItemReducer';
 
 export default combineReducers({
-  musicList: musicListReducers,
-  musicItem: musicItemReducers
+  list: musicListReducers,
+  item: musicItemReducers
 });

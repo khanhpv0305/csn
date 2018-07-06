@@ -1,5 +1,5 @@
 import musicListInitialState from '../initialStates/musicListInitialState';
-import actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
 export default (state = musicListInitialState, action) => {
   switch (action.type) {

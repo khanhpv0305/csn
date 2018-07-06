@@ -10,7 +10,7 @@ export const doGetAll = () => {
       //   kr: []
       // },
     
-      // new: []
+      // news: []
     }
   };
 }
