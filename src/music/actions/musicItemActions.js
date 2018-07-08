@@ -1,14 +1,32 @@
-import actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
+import axios from 'axios';
 
-export const doGetItem = (id) => {
+const doGetItem2 = (type, payload) => {
   return {
-    type: actionTypes.MUSIC_GET_ITEM,
-    payload: {
-      // id: '',
-      // name: '',
-      // artist: [],
-      // author: [],
-      // url: ''
-    }
+    type: type,
+    payload: payload
+  }
+};
+
+export const doGetItem = (url) => {
+  return dispatch => {
+    let requestUrl = `https://blooming-retreat-21036.herokuapp.com/song/${url}`;
+    axios.get(requestUrl)
+      .then(response => {
+        let newState = {
+          id: response.data.id,
+          name: response.data.name,
+          artist: response.data.artists,
+          author: response.data.authors,
+          url: response.data.downloadUrl
+        };
+  
+        dispatch(
+          doGetItem2(
+            actionTypes.MUSIC_GET_ITEM,
+            { ...newState }
+          )
+        );
+      });
   }
 }

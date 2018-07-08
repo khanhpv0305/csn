@@ -1,3 +1,3 @@
-import MusicItem from './container';
+import { MusicItem } from './container';
 
-export default MusicItem;
+export { MusicItem };

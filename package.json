@@ -15,12 +15,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "css-loader": "^0.28.11",
+    "css-loader": "^1.0.0",
     "domain-task": "^3.0.3",
     "file-loader": "^1.1.11",
     "history": "^4.7.2",
+    "locutus": "^2.0.9",
     "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.2",
     "prop-types": "^15.6.2",
     "react": "16.0.0",
     "react-dom": "16.0.0",
@@ -28,8 +29,9 @@
     "react-router-dom": "^4.3.1",
     "react-router-redux": "4.0.8",
     "redux": "^4.0.0",
-    "redux-thunk": "2.2.0",
+    "redux-thunk": "^2.3.0",
     "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
@@ -40,5 +42,10 @@
     "start-bs": "browser-sync start --config bs-config.js",
     "start": "concurrently --kill-others \"yarn start-wp\" \"yarn start-bs\"",
     "start:dev": "webpack-dev-server --mode development"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "js-base64": "^2.4.5",
+    "redux-logger": "^3.0.6"
   }
 }

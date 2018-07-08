@@ -2,7 +2,7 @@ import musicItemInitialState from '../initialStates/musicItemInitialState';
 import * as actionTypes from '../constants/actionTypes';
 
 export default (state = musicItemInitialState, action) => {
-  switch (actionTypes) {
+  switch (action.type) {
     case actionTypes.MUSIC_GET_ITEM:
       return {
         ...state,

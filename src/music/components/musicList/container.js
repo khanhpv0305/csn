@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { doGetAll } from '../../actions/musicListActions';
-import MusicListPresenter from './presenter';
+import { MusicListPresenter } from './presenter';
 
 const mapStateToProps = state => ({
   hot: state.music.list.hot,
@@ -17,4 +17,4 @@ const MusicList = connect(
   mapDispatchToProps
 )(MusicListPresenter);
 
-export default MusicList;
+export { MusicList };

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MusicItemPresenter from './presenter';
+import { MusicItemPresenter } from './presenter';
 import { doGetItem } from '../../actions/musicItemActions';
 
 const mapStateToProps = state => ({
@@ -12,8 +12,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  doGetItem: id => {
-    dispatch(doGetItem(id))
+  doGetItem: url => {
+    dispatch(doGetItem(url))
   }
 });
 
@@ -22,4 +22,4 @@ const MusicItem = connect(
   mapDispatchToProps
 )(MusicItemPresenter);
 
-export default MusicItem;
+export { MusicItem };

@@ -21,7 +21,7 @@ export default class App extends React.Component {
         <HashRouter>
           <Switch>
             <Route exact path='/' component={MusicList} />
-            <Route path='/songs/:id' component={MusicItem} />
+            <Route path='/song/:id' component={MusicItem} />
           </Switch>
         </HashRouter>
       </Provider>
