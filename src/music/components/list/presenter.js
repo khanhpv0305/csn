@@ -52,13 +52,37 @@ const MusicListPresenter = ({ hot, news }) => {
   );
 }
 
-// MusicListPresenter.propTypes = {
-//   hot: PropTypes.objectOf({
-//     usUk: PropTypes.array.isRequired,
-//     vn: PropTypes.array.isRequired,
-//     kr: PropTypes.array.isRequired
-//   }),
-//   news: PropTypes.array.isRequired
-// }
+MusicListPresenter.propTypes = {
+  hot: PropTypes.exact({
+    usUk: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        url: PropTypes.string,
+        id: PropTypes.string,
+      })
+    ),
+    vn: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        url: PropTypes.string,
+        id: PropTypes.string,
+      })
+    ),
+    kr: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        url: PropTypes.string,
+        id: PropTypes.string,
+      })
+    ),
+  }),
+  news: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      url: PropTypes.string,
+      id: PropTypes.string,
+    })
+  ),
+};
 
 export { MusicListPresenter };

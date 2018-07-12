@@ -1,9 +1,9 @@
-import musicItemInitialState from '../initialStates/musicItemInitialState';
+import musicListInitialState from '../initialStates/list';
 import * as actionTypes from '../constants/actionTypes';
 
-export default (state = musicItemInitialState, action) => {
+export default (state = musicListInitialState, action) => {
   switch (action.type) {
-    case actionTypes.MUSIC_GET_ITEM:
+    case actionTypes.LIST_LOAD:
       return {
         ...state,
         ...action.payload

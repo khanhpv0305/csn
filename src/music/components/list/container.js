@@ -1,15 +1,16 @@
+// Lib
 import { connect } from 'react-redux';
 
-import { doGetAll } from '../../actions/musicListActions';
+import { getList } from '../../actions/list';
 import { MusicListPresenter } from './presenter';
+import { getMusicList } from './selectors';
 
 const mapStateToProps = state => ({
-  hot: state.music.list.hot,
-  news: state.music.list.news
+  ...getMusicList(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  doGetAll: dispatch(doGetAll())
+  getList: () => dispatch(getList())
 });
 
 const MusicList = connect(

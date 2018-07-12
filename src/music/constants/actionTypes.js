@@ -1,2 +1,2 @@
-export const MUSIC_GET_ALL = 'music/GET_ALL';
-export const MUSIC_GET_ITEM = 'music/GET_ITEM';
+export const LIST_LOAD = 'music/list/LOAD';
+export const ITEM_LOAD = 'music/item/LOAD';

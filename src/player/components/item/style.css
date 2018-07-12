@@ -12,7 +12,7 @@
     font-size: 20px; }
   .player-item__time-bar {
     height: 5px;
-    background: blue;
+    background: #377F37;
     flex-grow: 1; }
   .player-item__repeat-button {
     height: 50px;

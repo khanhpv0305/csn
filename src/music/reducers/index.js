@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import musicListReducers from './musicListReducer';
-import musicItemReducers from './musicItemReducer';
+import musicListReducers from './list';
+import musicItemReducers from './item';
 
 export default combineReducers({
   list: musicListReducers,

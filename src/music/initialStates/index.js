@@ -1,5 +1,5 @@
-import musicListInitialState from './musicListInitialState';
-import musicItemInitialState from './musicItemInitialState';
+import musicListInitialState from './list';
+import musicItemInitialState from './item';
 
 export default {
   list: musicListInitialState,

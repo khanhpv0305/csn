@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import configureStore from './stores/configureStore';
+import configureStore from './store/configureStore';
 import initialState from './initialState';
 
 // Components
-import { MusicList } from './music/components/musicList';
-import { MusicItem } from './music/components/musicItem';
+import { MusicList } from './music/components/list';
+import { MusicItem } from './music/components/item';
 
 const store = configureStore(initialState);
 

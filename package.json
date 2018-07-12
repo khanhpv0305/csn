@@ -23,12 +23,13 @@
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.2",
     "prop-types": "^15.6.2",
-    "react": "16.0.0",
-    "react-dom": "16.0.0",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "4.0.8",
     "redux": "^4.0.0",
+    "redux-devtools": "^3.4.1",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
@@ -41,11 +42,18 @@
     "start-wp": "webpack --mode development",
     "start-bs": "browser-sync start --config bs-config.js",
     "start": "concurrently --kill-others \"yarn start-wp\" \"yarn start-bs\"",
-    "start:dev": "webpack-dev-server --mode development"
+    "start:server": "nodemon src/server.js",
+    "start:wp-dev-server": "webpack-dev-server --mode development",
+    "start:dev": "webpack-dev-server --mode development",
+    "start:dev2": "concurrently --kill-others \"yarn start:server\" \"yarn start:wp-dev-server\""
   },
   "dependencies": {
     "jquery": "^3.3.1",
     "js-base64": "^2.4.5",
-    "redux-logger": "^3.0.6"
+    "normalizr": "^3.2.4",
+    "redux-actions": "^2.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
   }
 }

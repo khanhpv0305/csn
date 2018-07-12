@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 class MusicItemPresenter extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.audioRef = null;
+
+    this.setAudioRef = element => {
+      this.audioRef = element;
+    }
   }
 
   componentDidMount() {
     try {
       // Dispatch API Call Action
-      this.props.doGetItem(this.props.match.params.id);
+      this.props.getItem(this.props.match.params.id);
     } catch(error) {
       console.log(error);
     }
@@ -48,7 +54,7 @@ class MusicItemPresenter extends React.Component {
           </div>
         </div>
 
-        <audio controls key={this.props.url}>
+        <audio controls key={this.props.url} ref={this.setAudioRef}>
           <source src={this.props.url} />
         </audio>
       </div>
@@ -56,12 +62,12 @@ class MusicItemPresenter extends React.Component {
   }
 }
 
-// MusicItemPresenter.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   artist: PropTypes.arrayOf(PropTypes.string).isRequired,
-//   author: PropTypes.arrayOf(PropTypes.string).isRequired,
-//   url: PropTypes.string.isRequired
-// }
+MusicItemPresenter.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  artist: PropTypes.arrayOf(PropTypes.string),
+  author: PropTypes.arrayOf(PropTypes.string),
+  url: PropTypes.string
+}
 
 export { MusicItemPresenter };
